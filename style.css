@@ -28,8 +28,19 @@ section {
     height: 100%;
     object-fit: cover;
     object-position: top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
 }
-
+.product_image img:first-child {
+    display: block;
+}
+.product:hover .product_image img:nth-child(2){
+    display: block;
+}
 .product_image {
     height: 330px;
     position: relative;
