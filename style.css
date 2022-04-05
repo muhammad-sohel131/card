@@ -48,7 +48,7 @@ section {
     cursor: pointer;
 }
 
-button {
+.product button {
     position: absolute;
     bottom: -100%;
     left: 0;
@@ -87,4 +87,66 @@ h4.product_price {
     margin-top: 7px;
     font-weight: 800;
     font-family: sans-serif;
+}
+
+/* css for prodcut popup */
+div#productPopUp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+}
+
+.popup_wrapper {
+    display: flex;
+    background: #fff;
+    position: absolute;
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 50px;
+}
+
+.popup_image img {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.popup_image {
+    position: relative;
+    height: 500px;
+}
+
+.popup_wrapper > div {
+    width: 40%;
+}
+
+.popup_details {
+    padding-top: 40px;
+}
+
+.popup_details h2 {
+    margin-bottom: 20px;
+}
+
+.popup_details h4 {
+    font-size: 25px;
+    margin-bottom: 8px;
+    font-family: sans-serif;
+}
+
+.add_to_cart {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
 }

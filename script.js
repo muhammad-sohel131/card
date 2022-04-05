@@ -25,7 +25,41 @@ const products = [
     }
 ]
 const showQuikView = (id) => {
-    console.log(id)
+    const targetProduct = products.find((product) => product.id === id)
+    const body = document.querySelector('body');
+    body.innerHTML += createProductPopup(targetProduct)
+}
+
+const createProductPopup = (product) => {
+    let popupImages = '';
+    product.images.forEach(image => {
+        popupImages += `<img src=${image} />`
+    })
+
+    return `
+    <div id="productPopUp">
+        <div class="container">
+            <div class="popup_wrapper">
+                <div class='popup_image'>
+                    ${popupImages}
+                </div>
+                <div class='popup_details'>
+                    <h2>${product.title}</h2>
+                    <h4>${product.price}</h4>
+                    <p>${product.desc}</p>
+                    <div class="add_to_cart">
+                        <div clas="product_quantity_box">
+                            <button class="decrease_quantity">-</button>
+                            <input type="number" class="product_quantity" />
+                            <button class="increase_quantity">+</button>
+                        </div>
+                        <button class="add_to_cart_button">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    `
 }
 
 const createProduct = (product) => {
